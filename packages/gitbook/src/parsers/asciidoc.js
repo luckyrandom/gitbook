@@ -9,6 +9,8 @@ const FILE_EXTENSIONS = [
     '.asciidoc'
 ];
 
+const ATTR = 'showtitle icons=@';
+
 /**
  * Render a document as text.
  * @param  {Document} document
@@ -36,7 +38,7 @@ function toDocument(text) {
  */
 function toHTML(text) {
     return asciidocjs.convert(text, {
-        attributes: 'showtitle'
+        attributes: ATTR
     });
 }
 
@@ -57,7 +59,7 @@ function prepare(text) {
 function toInlineHTML(text) {
     return asciidocjs.convert(text, {
         doctype: 'inline',
-        attributes: 'showtitle'
+        attributes: ATTR
     });
 }
 
